@@ -51,4 +51,54 @@
   /* ---- ano do rodapé ---- */
   var ano = doc.querySelector('.ano');
   if (ano) ano.textContent = new Date().getFullYear();
+
+  /* Filtro de publicações por tipo e ano (client-side) */
+  var lista = doc.getElementById('pub-lista');
+  if (lista) {
+    var btns = doc.querySelectorAll('#pub-filtros .filtro');
+    var selAno = doc.getElementById('filtro-ano');
+    var tipoAtual = '*';
+    var anoAtual = '*';
+    // popular o select de anos
+    if (selAno) {
+      (function () {
+        var anos = [];
+        lista.querySelectorAll('.pub-ano').forEach(function (el) {
+          var a = (el.textContent || '').trim();
+          if (a && anos.indexOf(a) === -1) anos.push(a);
+        });
+        anos.sort().reverse();
+        anos.forEach(function (a) {
+          var opt = doc.createElement('option');
+          opt.value = a;
+          opt.textContent = a;
+          selAno.appendChild(opt);
+        });
+      })();
+    }
+    function aplicarFiltro() {
+      var itens = lista.querySelectorAll('.pub');
+      itens.forEach(function (li) {
+        var tipo = ((li.querySelector('.pub-tipo') || {}).textContent || '').replace(/[^a-z]/gi, '').toLowerCase();
+        var ano = ((li.querySelector('.pub-ano') || {}).textContent || '').trim();
+        var okTipo = tipoAtual === '*' || tipo.indexOf(tipoAtual) > -1;
+        var okAno = anoAtual === '*' || ano === anoAtual;
+        li.style.display = (okTipo && okAno) ? '' : 'none';
+      });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('ativo'); });
+        b.classList.add('ativo');
+        tipoAtual = b.getAttribute('data-tipo') || '*';
+        aplicarFiltro();
+      });
+    });
+    if (selAno) {
+      selAno.addEventListener('change', function () {
+        anoAtual = selAno.value || '*';
+        aplicarFiltro();
+      });
+    }
+  }
 })();

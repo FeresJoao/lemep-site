@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Produção científica · LEMEP</title>
-  <meta name="description" content="Artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2010 — cobertura midiática de eleições, viés jornalístico, populismo e mídia, ação afirmativa na imprensa e monitoramento do debate econômico.">
+  <meta name="description" content="Artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2014 — cobertura midiática de eleições, viés jornalístico, populismo e mídia, ação afirmativa na imprensa e monitoramento do debate econômico.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://lemep.iesp.uerj.br/publicacoes/">
   <meta property="og:title" content="Produção científica · LEMEP">
-  <meta property="og:description" content="Artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2010.">
+  <meta property="og:description" content="Artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2014.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og_1200x630.png">
   <meta property="og:locale" content="pt_BR">
@@ -47,14 +47,24 @@
       <svg class="trama trama--faixa" viewBox="0 0 1200 800" aria-hidden="true" focusable="false"><g fill="none" stroke="#73BF44" stroke-width="2"><circle cx="600" cy="400" r="280"/><circle cx="600" cy="400" r="196"/><path d="M264 400H936M600 64V736"/></g><circle cx="796" cy="400" r="12" fill="#EE4055"/></svg>
       <div class="container">
         <h1>Produção científica</h1>
-        <p class="faixa-lead">Reunimos aqui artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2010. A produção abrange temas como cobertura midiática de eleições, viés jornalístico, populismo e mídia, ação afirmativa na imprensa e monitoramento do debate econômico. Muitos dos textos estão disponíveis em acesso aberto nos links indicados.</p>
+        <p class="faixa-lead">Reunimos aqui artigos, capítulos e livros publicados pelos pesquisadores do LEMEP desde 2014. A produção abrange temas como cobertura midiática de eleições, viés jornalístico, populismo e mídia, ação afirmativa na imprensa e monitoramento do debate econômico. Muitos dos textos estão disponíveis em acesso aberto nos links indicados.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <h2>Publicações do laboratório</h2>
-        <ul class="pub-list">
+                <div class="pub-filtros" id="pub-filtros" aria-label="Filtrar publicações">
+          <button class="filtro ativo" data-tipo="*">Todas</button>
+          <button class="filtro" data-tipo="artigo">Artigos</button>
+          <button class="filtro" data-tipo="capitulo">Capítulos</button>
+          <button class="filtro" data-tipo="livro">Livros</button>
+          <button class="filtro" data-tipo="relatorio">Relatórios</button>
+          <select class="filtro-ano" id="filtro-ano" aria-label="Filtrar por ano">
+            <option value="*">Todos os anos</option>
+          </select>
+        </div>
+        <ul class="pub-list" id="pub-lista">
           <li class="pub">
             <span class="pub-ano">2019</span>
             <div class="pub-dados">
@@ -62,11 +72,11 @@
               <p class="pub-titulo">A cobertura jornalística das greves gerais de 2017: paradigma de protesto ou militância política</p>
               <p class="pub-autores">João Feres Junior, Márcia Cândido Rangel, Patrícia Bandeira de Melo e Lidiane Vieira Rezende</p>
               <p class="pub-venue">Opinião Pública · 2019</p>
-              <p class="pub-acesso">Acesso aberto</p>
+              <p class="pub-acesso"><a href="https://doi.org/10.1590/1807-01912019253495" target="_blank" rel="noopener">DOI 10.1590/1807-01912019253495 · acesso aberto</a></p>
             </div>
           </li>
         </ul>
-        <div class="pending" id="pendencia-03" style="margin-top:32px; max-width:52em;"><span class="chip">pendente · aguarda dados</span>A <strong>lista completa de publicações desde 2010</strong> — com tipos ([Artigo], [Capítulo], [Livro], [Relatório]), autoria, periódico/editora, ano e links de acesso aberto — não consta nos documentos-fonte. A entrada acima é o exemplo real documentado; as demais serão incluídas a partir da lista oficial do laboratório.</div>
+        <div class="pending" id="pendencia-03" style="margin-top:32px; max-width:52em;"><span class="chip">pendente · aguarda dados</span>A <strong>lista completa de publicações desde 2014</strong> — com tipos ([Artigo], [Capítulo], [Livro], [Relatório]), autoria, periódico/editora, ano e links de acesso aberto — não consta nos documentos-fonte. A entrada acima é o exemplo real documentado; as demais serão incluídas a partir da lista oficial do laboratório.</div>
       </div>
     </section>
 
@@ -95,8 +105,23 @@
         <div class="pending pending--rodape" id="pendencia-09"><span class="chip">pendente</span> endereço completo (rua, número, CEP)</div>
       </div>
       <div class="footer-redes">
-        <h3>Redes sociais</h3>
-        <div class="pending pending--rodape" id="pendencia-07"><span class="chip">pendente</span> X (antigo Twitter) · Instagram · YouTube</div>
+        <h3>Redes dos projetos</h3>
+        <a href="https://www.instagram.com/manchetometro/" target="_blank" rel="noopener">Instagram do Manchetômetro</a>
+        <a href="https://x.com/manchetometro" target="_blank" rel="noopener">X · Manchetômetro</a>
+        <a href="https://www.facebook.com/manchetometro" target="_blank" rel="noopener">Facebook · Manchetômetro</a>
+        <a href="https://www.youtube.com/channel/UCa4w2I2HwWrvSWfOHH2iDfQ" target="_blank" rel="noopener">YouTube · Manchetômetro</a>
+      </div>
+    </div>
+    <div class="footer-parceiros">
+      <div class="container">
+        <p class="parceiros-rotulo">Parceiros e financiamento</p>
+        <div class="chips-parceiros">
+          <a href="https://www.iesp.uerj.br" target="_blank" rel="noopener">IESP-UERJ</a>
+          <a href="https://www.uerj.br" target="_blank" rel="noopener">UERJ</a>
+          <a href="https://www.gov.br/capes" target="_blank" rel="noopener">CAPES</a>
+          <a href="https://www.daad.de/en/" target="_blank" rel="noopener">DAAD</a>
+        </div>
+        <div class="pending pending--rodape" id="pendencia-11"><span class="chip">pendente</span> logotipos oficiais dos parceiros e financiadores</div>
       </div>
     </div>
     <div class="footer-baixo">
