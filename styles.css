@@ -566,3 +566,22 @@ html[data-theme="dark"] .pub-filtros .filtro.ativo { background: #73BF44; border
   font: inherit;
   font-size: .86rem;
 }
+/* v1.2 — destaques, contato, compartilhamento, col. anteriores */
+.contato-grid { display: grid; gap: 2.2em; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.contato-bloco p a, .contato-bloco > a { display: block; color: inherit; }
+.footer-endereco { font-size: .85rem; opacity: .85; margin-top: .4em; }
+.en-resumo { font-size: .92rem; border-left: 3px solid var(--verde, #73BF44); padding-left: 1em; color: inherit; opacity: .9; }
+.share-row {
+  display: flex; flex-wrap: wrap; gap: .45em; align-items: center;
+  margin-top: .8em; padding-top: .5em; border-top: 1px dashed rgba(99,101,103,.35);
+  font-size: .8rem;
+}
+.share-rot { text-transform: uppercase; letter-spacing: .06em; font-weight: 700; font-size: .7rem; color: var(--cinza, #636567); }
+.share-row a, .share-copy {
+  padding: .18em .7em; border: 1px solid currentColor; border-radius: 999px;
+  background: transparent; color: inherit; font: inherit; font-size: .8rem;
+  text-decoration: none; cursor: pointer;
+}
+.share-row a:hover, .share-copy:hover { background: rgba(0,66,90,.08); }
+html[data-theme="dark"] .share-row a:hover { background: rgba(255,255,255,.1); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

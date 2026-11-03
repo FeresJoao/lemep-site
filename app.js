@@ -101,4 +101,36 @@
       });
     }
   }
+
+  /* Botoes de compartilhamento em publicacoes e projetos */
+  function addShare(el, url, titulo) {
+    if (el.querySelector('.share-row')) return;
+    var row = doc.createElement('div');
+    row.className = 'share-row';
+    var u = encodeURIComponent(url);
+    var t = encodeURIComponent(titulo || 'LEMEP');
+    row.innerHTML = '<span class="share-rot">Compartilhar:</span>'
+      + '<a data-wa="1" href="https://api.whatsapp.com/send?text=' + t + '%20' + u + '" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">WhatsApp</a>'
+      + '<a href="https://x.com/intent/post?text=' + t + '&url=' + u + '" target="_blank" rel="noopener" aria-label="Compartilhar no X">X</a>'
+      + '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + u + '" target="_blank" rel="noopener" aria-label="Compartilhar no LinkedIn">LinkedIn</a>'
+      + '<button type="button" class="share-copy" aria-label="Copiar link">Copiar link</button>';
+    row.querySelector('.share-copy').addEventListener('click', function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(url);
+      this.textContent = 'Link copiado ✓';
+      var b = this;
+      setTimeout(function () { b.textContent = 'Copiar link'; }, 1800);
+    });
+    el.appendChild(row);
+  }
+  doc.querySelectorAll('#pub-lista .pub').forEach(function (li) {
+    var a = li.querySelector('.pub-titulo a[href]');
+    var url = a ? a.href : doc.location.href;
+    var tit = (li.querySelector('.pub-titulo') || {}).textContent || '';
+    addShare(li.querySelector('.pub-dados'), url, tit.trim());
+  });
+  doc.querySelectorAll('.card').forEach(function (card) {
+    var h = card.getAttribute('href');
+    var tit = (card.querySelector('h3') || {}).textContent || '';
+    if (h) addShare(card, h, 'LEMEP — ' + tit.trim());
+  });
 })();
